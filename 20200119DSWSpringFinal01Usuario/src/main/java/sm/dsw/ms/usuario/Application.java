@@ -1,4 +1,4 @@
-package sm.dsw.ms.usuario;
+    package sm.dsw.ms.usuario;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

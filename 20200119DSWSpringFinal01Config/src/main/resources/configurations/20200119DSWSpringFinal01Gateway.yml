@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  config:
+    import: optional:configserver:http://localhost:8888  
+  application:
+    name: 20200119DSWSpringFinal01ConteinerGateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: usuarios
+          uri: 'http://localhost:8090'
+          predicates:
+            - Path=/api/usuario/**
+        - id: roles
+          uri: 'http://localhost:9090'
+          predicates:
+            - Path=/api/rol/**
+eureka:
+  client:
+    register-with-eureka: false

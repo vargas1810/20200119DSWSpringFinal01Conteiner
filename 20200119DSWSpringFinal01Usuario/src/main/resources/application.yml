@@ -7,14 +7,22 @@ spring:
     import: optional:configserver:http://localhost:8888
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://dspg-cpufgclds78s73drp7vg-a.oregon-postgres.render.com:5432/proyectosisvita_quix
+    url: jdbc:postgresql://dpg-cpufgclds78s73drp7vg-a.oregon-postgres.render.com:5432/ProyectoSisvita
     username: proyectosisvita_quix_user
     password: qHhMun2POXm3cIM4LnmTQALrcc5gsgh3
   jpa:
     hibernate:
-      ddl-auto: create
-    #database: postgresql
-    database-platform: org.hibernate.dialect.PostgreSQLDialect      
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect    
+logging:
+  level:
+    root: INFO
+    sm.dsw.ms.usuario: DEBUG  # Ajusta esto según tu paquete base
 
 eureka:
   instance:

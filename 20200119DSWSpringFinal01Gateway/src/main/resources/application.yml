@@ -1,1 +1,15 @@
-spring.application.name=20200119DSWSpringFinal01Gateway
+server:
+  port: 8080
+
+spring:
+  config:
+    import: optional:configserver:http://localhost:8888  
+  application:
+    name: 20200119DSWSpringFinal01ConteinerGateway
+  cloud:
+    gateway:
+      routes:
+        - id: usuarios
+          uri: 'lb://20200119DSWSpringFinal01Usuario'
+          predicates:
+            - Path=/api/usuarios/**

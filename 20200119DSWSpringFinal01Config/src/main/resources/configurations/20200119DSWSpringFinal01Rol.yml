@@ -7,13 +7,13 @@ spring:
     import: optional:configserver:http://localhost:8888
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://dpg-cpufgclds78s73drp7vg-a.oregon-postgres.render.com:5432/ProyectoSisvita
+    url: jdbc:postgresql://dpg-cpufgclds78s73drp7vg-a.oregon-postgres.render.com:5432/proyectosisvita_quix
     username: proyectosisvita_quix_user
     password: qHhMun2POXm3cIM4LnmTQALrcc5gsgh3
   jpa:
     hibernate:
-      ddl-auto: create
-    #database: postgresql
+      ddl-auto: create-drop
+    database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect      
 eureka:
   instance:
